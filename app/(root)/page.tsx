@@ -1,3 +1,4 @@
+import Card from '@/components/Card';
 import React from 'react'
 
 const products = [
@@ -47,7 +48,18 @@ const Home = () => {
         </h2>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          
+          {products.map((p) => (
+            <Card
+              key={p.id}
+              title={p.title}
+              subtitle={p.subtitle}
+              meta={p.meta}
+              imageSrc={p.imageSrc}
+              price={p.price}
+              badge={p.badge}
+              href={`/products/${p.id}`}
+            />
+          ))}
 
         </div>
 
