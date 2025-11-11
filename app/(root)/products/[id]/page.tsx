@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { Card, CollapsibleSection, ProductGallery, SizePicker } from "@/components";
+import SizePicker  from "@/components/SizePicker";
+import Card from "@/components/Card";
+import CollapsibleSection from "@/components/CollapsibleSection";
+import ProductGallery from "@/components/ProductGallery";
 import { Heart, ShoppingBag, Star } from "lucide-react";
 import ColorSwatches from "@/components/ColorSwatches";
 import { getProduct, getProductReviews, getRecommendedProducts, type Review, type RecommendedProduct } from "@/lib/actions/product";
@@ -61,7 +64,7 @@ async function ReviewsSection({ productId }: { productId: string }) {
                 </span>
               </div>
               {r.title && <p className="text-body-medium text-dark-900">{r.title}</p>}
-              {r.content && <p className="mt-1 line-clamp-[8] text-body text-dark-700">{r.content}</p>}
+              {r.content && <p className="mt-1 line-clamp-8 text-body text-dark-700">{r.content}</p>}
               <p className="mt-2 text-caption text-dark-700">{new Date(r.createdAt).toLocaleDateString()}</p>
             </li>
           ))}
